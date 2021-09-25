@@ -1,6 +1,6 @@
 package com.brkygngr.bracketcoco.ejb.stateless;
 
-import com.brkygngr.bracketcoco.ejb.remote.PairCombinationsRemote;
+import com.brkygngr.bracketcoco.ejb.PairCombinationsRemote;
 
 import javax.ejb.Stateless;
 

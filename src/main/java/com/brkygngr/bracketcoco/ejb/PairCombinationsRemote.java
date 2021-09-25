@@ -1,4 +1,4 @@
-package com.brkygngr.bracketcoco.ejb.remote;
+package com.brkygngr.bracketcoco.ejb;
 
 import javax.ejb.Remote;
 
