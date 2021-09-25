@@ -13,9 +13,6 @@ public class PairCombinationsResource {
   @EJB
   private PairCombinations pairCombinations;
 
-  public PairCombinationsResource() {
-  }
-
   @GET
   @Path("bracket")
   @Consumes("application/json")
