@@ -1,6 +1,7 @@
 package com.brkygngr.bracketcoco.constant;
 
 public final class ErrorMessageConstant {
+
   private ErrorMessageConstant() {
   }
 
