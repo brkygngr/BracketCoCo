@@ -8,20 +8,20 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class MathUtilityTest {
+class MathEquationUtilityTest {
 
   @Nested
   class Factorial {
     @ParameterizedTest
     @CsvSource({"0, 1", "1, 1", "2, 2", "4, 24", "6, 720"})
     void canCalculateForValidNumbers(final int number, final int expected) {
-      assertEquals(MathUtility.factorial(number), expected);
+      assertEquals(MathEquationUtility.factorial(number), expected);
     }
 
     @ParameterizedTest
     @ValueSource(ints = {-100, -5, -2, -1})
     public void totalCombinations_throwsIllegalArgumentExceptionForNegativeNumbers(final int number) {
-      assertThrows(IllegalArgumentException.class, () -> MathUtility.factorial(number));
+      assertThrows(IllegalArgumentException.class, () -> MathEquationUtility.factorial(number));
     }
   }
 
@@ -30,13 +30,13 @@ class MathUtilityTest {
     @ParameterizedTest
     @CsvSource({"0, 1", "1, 1", "2,2", "3,5", "6, 132"})
     void canCalculateForValidNumbers(final int number, final int expected) {
-      assertEquals(MathUtility.catalan(number), expected);
+      assertEquals(MathEquationUtility.catalan(number), expected);
     }
 
     @ParameterizedTest
     @ValueSource(ints = {-100, -5, -2, -1})
     public void totalCombinations_throwsIllegalArgumentExceptionForNegativeNumbers(final int number) {
-      assertThrows(IllegalArgumentException.class, () -> MathUtility.catalan(number));
+      assertThrows(IllegalArgumentException.class, () -> MathEquationUtility.catalan(number));
     }
   }
 }

@@ -2,9 +2,9 @@ package com.brkygngr.bracketcoco.utility;
 
 import com.brkygngr.bracketcoco.validator.PositiveNumberValidator;
 
-public final class MathUtility {
+public final class MathEquationUtility {
 
-  private MathUtility() {
+  private MathEquationUtility() {
   }
 
   public static int factorial(final int number) {
