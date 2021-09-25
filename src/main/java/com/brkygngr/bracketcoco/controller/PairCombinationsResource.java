@@ -1,6 +1,6 @@
 package com.brkygngr.bracketcoco.controller;
 
-import com.brkygngr.bracketcoco.ejb.combinations.pair.PairCombinationsBean;
+import com.brkygngr.bracketcoco.ejb.combinations.pair.PairCombinations;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -11,7 +11,7 @@ import javax.ws.rs.*;
 public class PairCombinationsResource {
 
   @EJB
-  private PairCombinationsBean pairCombinationsBean;
+  private PairCombinations pairCombinations;
 
   public PairCombinationsResource() {
   }
@@ -21,6 +21,6 @@ public class PairCombinationsResource {
   @Consumes("application/json")
   @Produces("application/json")
   public int bracketCombinations(@QueryParam("pairCount") int pairCount) {
-    return pairCombinationsBean.totalCombinations(pairCount);
+    return pairCombinations.totalCombinations(pairCount);
   }
 }
