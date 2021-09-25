@@ -10,11 +10,9 @@ import javax.ws.rs.*;
 public class CombinationsResource {
 
   @EJB(beanInterface = BracketPairCombinationsBean.class)
-  private final PairCombinationsBean pairCombinationsBean;
+  private PairCombinationsBean pairCombinationsBean;
 
-  public CombinationsResource(PairCombinationsBean pairCombinationsBean) {
-    this.pairCombinationsBean = pairCombinationsBean;
-  }
+  public CombinationsResource() {}
 
   @GET
   @Path("bracket")
