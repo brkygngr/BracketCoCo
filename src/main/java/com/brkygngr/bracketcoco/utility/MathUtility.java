@@ -1,16 +1,14 @@
 package com.brkygngr.bracketcoco.utility;
 
-public final class MathUtility {
+import com.brkygngr.bracketcoco.validator.PositiveNumberValidator;
 
-  private static final String ERROR_NEGATIVE_NUMBER = "Given number must be positive.";
+public final class MathUtility {
 
   private MathUtility() {
   }
 
   public static int factorial(final int number) {
-    if (number < 0) {
-      throw new IllegalArgumentException(ERROR_NEGATIVE_NUMBER);
-    }
+    PositiveNumberValidator.throwErrorIfNegative(number);
 
     if (number == 0) {
       return 1;
@@ -24,9 +22,7 @@ public final class MathUtility {
   }
 
   public static int catalan(final int pairCount) {
-    if (pairCount < 0) {
-      throw new IllegalArgumentException(ERROR_NEGATIVE_NUMBER);
-    }
+    PositiveNumberValidator.throwErrorIfNegative(pairCount);
 
     int numerator = factorial(2 * pairCount);
     int denominator = factorial(pairCount + 1) * factorial(pairCount);
