@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CombinationsService } from './services/combinations.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'bcc-ui';
+  pairCount: number | undefined;
+  result: number | undefined;
+
+  constructor(private readonly combinationsService: CombinationsService) {
+
+  }
+
+  onCountClick() {
+    if (this.pairCount) {
+      this.combinationsService.getBracketCombinations(this.pairCount).subscribe((result) => {
+        this.result = result
+      });
+    }
+  }
 }
