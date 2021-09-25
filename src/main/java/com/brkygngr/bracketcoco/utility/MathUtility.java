@@ -23,13 +23,13 @@ public final class MathUtility {
     return number * factorial(number - 1);
   }
 
-  public static int catalan(final int number) {
-    if (number < 0) {
+  public static int catalan(final int pairCount) {
+    if (pairCount < 0) {
       throw new IllegalArgumentException(ERROR_NEGATIVE_NUMBER);
     }
 
-    int numerator = factorial(2 * number);
-    int denominator = factorial(number + 1) * factorial(number);
+    int numerator = factorial(2 * pairCount);
+    int denominator = factorial(pairCount + 1) * factorial(pairCount);
 
     return numerator / denominator;
   }
