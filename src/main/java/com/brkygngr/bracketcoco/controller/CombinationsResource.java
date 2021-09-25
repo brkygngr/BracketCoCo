@@ -1,18 +1,20 @@
 package com.brkygngr.bracketcoco.controller;
 
 import com.brkygngr.bracketcoco.ejb.PairCombinationsBean;
-import com.brkygngr.bracketcoco.ejb.stateless.BracketPairCombinationsBean;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import javax.ws.rs.*;
 
 @Path("combinations")
+@Stateless
 public class CombinationsResource {
 
-  @EJB(beanInterface = BracketPairCombinationsBean.class)
+  @EJB
   private PairCombinationsBean pairCombinationsBean;
 
-  public CombinationsResource() {}
+  public CombinationsResource() {
+  }
 
   @GET
   @Path("bracket")
