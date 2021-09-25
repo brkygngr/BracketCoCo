@@ -1,6 +1,6 @@
-package com.brkygngr.bracketcoco.ejb.stateless;
+package com.brkygngr.bracketcoco.ejb.combinations.pair.bracket;
 
-import com.brkygngr.bracketcoco.ejb.PairCombinationsBean;
+import com.brkygngr.bracketcoco.ejb.combinations.pair.PairCombinationsBean;
 
 import javax.ejb.Stateless;
 

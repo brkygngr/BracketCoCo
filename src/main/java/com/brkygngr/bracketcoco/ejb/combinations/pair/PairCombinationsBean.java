@@ -1,4 +1,4 @@
-package com.brkygngr.bracketcoco.ejb;
+package com.brkygngr.bracketcoco.ejb.combinations.pair;
 
 import javax.ejb.Local;
 

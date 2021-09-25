@@ -1,6 +1,6 @@
 package com.brkygngr.bracketcoco.controller;
 
-import com.brkygngr.bracketcoco.ejb.PairCombinationsBean;
+import com.brkygngr.bracketcoco.ejb.combinations.pair.PairCombinationsBean;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
