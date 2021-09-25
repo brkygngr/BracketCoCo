@@ -8,12 +8,12 @@ import javax.ws.rs.*;
 
 @Path("combinations")
 @Stateless
-public class CombinationsResource {
+public class PairCombinationsResource {
 
   @EJB
   private PairCombinationsBean pairCombinationsBean;
 
-  public CombinationsResource() {
+  public PairCombinationsResource() {
   }
 
   @GET
