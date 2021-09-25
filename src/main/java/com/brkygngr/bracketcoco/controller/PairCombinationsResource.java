@@ -4,6 +4,9 @@ import com.brkygngr.bracketcoco.ejb.combinations.pair.PairCombinations;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import javax.ws.rs.*;
 
 @Path("combinations")
@@ -17,7 +20,7 @@ public class PairCombinationsResource {
   @Path("bracket")
   @Consumes("application/json")
   @Produces("application/json")
-  public int bracketCombinations(@QueryParam("pairCount") int pairCount) {
+  public int bracketCombinations(@NotNull @Min(0) @Max(Integer.MAX_VALUE) @QueryParam("pairCount") int pairCount) {
     return pairCombinations.totalCombinations(pairCount);
   }
 }
