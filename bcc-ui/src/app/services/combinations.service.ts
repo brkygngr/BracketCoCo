@@ -12,7 +12,7 @@ export class CombinationsService {
 
   getBracketCombinations(pairCount: number): Observable<number> {
     return this.httpClient.get<number>(
-      `${CombinationsService.SERVICE_URL}brackets?pairCount=${pairCount}`
+      `${CombinationsService.SERVICE_URL}bracket?pairCount=${pairCount}`
     )
   }
 }
