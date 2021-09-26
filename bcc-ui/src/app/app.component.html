@@ -7,6 +7,9 @@
       </label>
   
       <button (click)="onCountClick()">Count</button>
+      <div *ngIf="isLoading">
+        Result is loading
+      </div>
     </div>
   
     <div class="app-form-element">
@@ -17,6 +20,5 @@
         {{ error }}
       </div>
     </div>
-  </div>
-  
+  </div>  
 </div>

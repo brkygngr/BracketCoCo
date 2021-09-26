@@ -7,23 +7,27 @@ import { CombinationsService } from './services/combinations.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  pairCount = 0;
   result: number | undefined;
   error: string | undefined;
+  pairCount = 0;
+  isLoading = false;
 
   constructor(private readonly combinationsService: CombinationsService) {}
 
   onCountClick() {
     if (0 <= this.pairCount) {
       this.resetResult();
+      this.isLoading = true;
       this.combinationsService.getBracketCombinations(this.pairCount).subscribe(
         (result) => {
           this.result = result.totalCombinations;
           this.error = undefined;
+          this.isLoading = false;
         },
         (failure: { e: string }) => {
           this.result = undefined;
           this.error = this.pairCount + ' ' + failure.e;
+          this.isLoading = false;
         }
       );
     } else {
