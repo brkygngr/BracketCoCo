@@ -26,7 +26,7 @@ class ParallelFactorialEquationTest {
   private ParallelFactorialEquation parallelFactorialEquation;
 
   @Nested
-  class Factorials_can_calculate {
+  class Factorial_can_calculate {
     @ParameterizedTest
     @CsvSource({"0, 1", "1, 1", "2, 2", "4, 24", "6, 720", "100, 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000"})
     void positive_numbers(final String givenNumber, final String givenExpected) {

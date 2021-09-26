@@ -27,7 +27,7 @@ class RecursiveFactorialEquationTest {
   private RecursiveFactorialEquation recursiveFactorialEquation;
 
   @Nested
-  class Factorials_can_calculate {
+  class Factorial_can_calculate {
     @ParameterizedTest
     @CsvSource({"0, 1", "1, 1", "2, 2", "4, 24", "6, 720"})
     void positive_numbers(final String givenNumber, final String givenExpected) {
