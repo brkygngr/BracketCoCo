@@ -17,7 +17,7 @@ export class AppComponent {
       this.combinationsService
         .getBracketCombinations(this.pairCount)
         .subscribe((result) => {
-          this.result = result;
+          this.result = result.totalCombinations;
         });
     }
   }
