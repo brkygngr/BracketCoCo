@@ -1,12 +1,24 @@
 package com.brkygngr.bracketcoco.validator;
 
-import com.brkygngr.bracketcoco.constant.ErrorMessageConstant;
+import javax.ejb.Stateless;
 
-public class PositiveNumberValidator {
+@Stateless
+public class PositiveNumberValidator implements NumberValidator {
 
-  public static void throwErrorIfNegative(int number) {
-    if (number < 0) {
-      throw new IllegalArgumentException(ErrorMessageConstant.NEGATIVE_NUMBER);
-    }
+  public final String NEGATIVE_NUMBER = "Given number must be positive.";
+
+  @Override
+  public boolean valid(int number) {
+    return number >= 0;
+  }
+
+  @Override
+  public boolean invalid(int number) {
+    return !valid(number);
+  }
+
+  @Override
+  public void throwError() {
+    throw new IllegalArgumentException(NEGATIVE_NUMBER);
   }
 }
