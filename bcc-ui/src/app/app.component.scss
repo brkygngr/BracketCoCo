@@ -4,20 +4,22 @@
   height: 100%;
   max-width: 100%;
   max-height: 100%;
+  color: #FFFFFF;
+}
+
+.app-page-container {
+  background-color: #F59376;
 }
 
 .app-form-container,
 .app-form-element {
   padding: 1rem;
-  margin: 1rem;
 }
 
 .app-result-wrapper,
 .app-error-wrapper {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   max-height: 40vh;
   overflow-y: auto;
 }
@@ -36,5 +38,9 @@
 
 .app-error-wrapper {
   color: red;
-  border-top: black 1px solid;
+}
+
+.app-row {
+  display: flex;
+  justify-content: space-between;
 }

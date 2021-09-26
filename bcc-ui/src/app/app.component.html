@@ -1,24 +1,25 @@
 <div class="app-page-container">
   <div class="app-form-container">
-    <div class="app-form-element">
-      <label>
-        Type a number equal to or bigger than 0
-        <input type="number" min="0" [(ngModel)]="pairCount" (keyup)="onNumberInputKeyUp()" />
-      </label>
-  
-      <button (click)="onCountClick()">Count</button>
-      <div *ngIf="isLoading">
-        Result is loading
+    <div class="app-form-element app-row">
+      <div>
+        <label>
+          Type a number equal to or bigger than 0
+          <input
+            type="number"
+            min="0"
+            [(ngModel)]="pairCount"
+            (keyup)="onNumberInputKeyUp()"
+          />
+        </label>
+        <button (click)="onCountClick()">Count</button>
       </div>
-    </div>
-  
-    <div class="app-form-element">
-      <div class="app-result-wrapper">
-        Result: {{ result }}
-      </div>  
-      <div class="app-error-wrapper">
+      <span *ngIf="isLoading"> Result is loading </span>
+      <span class="app-error-wrapper">
         {{ error }}
-      </div>
+      </span>
     </div>
-  </div>  
+    <div class="app-form-element">
+      <div class="app-result-wrapper">Result: {{ result }}</div>
+    </div>
+  </div>
 </div>
