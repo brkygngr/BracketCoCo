@@ -7,6 +7,10 @@ import { CombinationsService } from './services/combinations.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  private static readonly ONLY_NUMBER_REG_EXP = new RegExp('^[0-9]+$');
+  private static readonly ERROR_MSG =
+    'Number must be bigger than zero and only contain numbers.';
+
   result: number | undefined;
   error: string | undefined;
   pairCount = 0;
@@ -15,7 +19,10 @@ export class AppComponent {
   constructor(private readonly combinationsService: CombinationsService) {}
 
   onCountClick() {
-    if (0 <= this.pairCount) {
+    if (
+      0 <= this.pairCount &&
+      AppComponent.ONLY_NUMBER_REG_EXP.test(String(this.pairCount))
+    ) {
       this.resetResult();
       this.isLoading = true;
       this.combinationsService.getBracketCombinations(this.pairCount).subscribe(
@@ -31,13 +38,13 @@ export class AppComponent {
         }
       );
     } else {
-      this.error = 'Number must be bigger than zero.';
+      this.error = AppComponent.ERROR_MSG;
     }
   }
 
   onNumberInputKeyUp() {
     if (this.pairCount < 0) {
-      this.error = 'Number must be bigger than zero.';
+      this.error = AppComponent.ERROR_MSG;
     } else {
       this.error = undefined;
     }
