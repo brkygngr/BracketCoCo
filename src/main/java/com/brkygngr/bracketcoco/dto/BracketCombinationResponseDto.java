@@ -10,13 +10,13 @@ import java.math.BigInteger;
 public class BracketCombinationResponseDto {
 
   @PositiveOrZero
+  @JsonProperty("tc")
   private final BigInteger totalCombinations;
 
   public BracketCombinationResponseDto(final BigInteger totalCombinations) {
     this.totalCombinations = totalCombinations;
   }
 
-  @JsonProperty("tc")
   public BigInteger getTotalCombinations() {
     return totalCombinations;
   }
