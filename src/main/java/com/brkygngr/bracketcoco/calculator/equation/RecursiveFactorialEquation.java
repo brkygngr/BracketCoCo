@@ -2,6 +2,7 @@ package com.brkygngr.bracketcoco.calculator.equation;
 
 import com.brkygngr.bracketcoco.calculator.CalculatorConstants;
 import com.brkygngr.bracketcoco.calculator.CalculatorUtilities;
+import com.brkygngr.bracketcoco.calculator.equation.qualifier.RecursiveFactorial;
 import com.brkygngr.bracketcoco.validator.NumberValidator;
 
 import javax.ejb.Stateless;
@@ -12,6 +13,7 @@ import java.math.BigInteger;
 
 @Deprecated
 @Stateless
+@RecursiveFactorial
 public class RecursiveFactorialEquation implements FactorialEquation {
 
   private final NumberValidator numberValidator;
