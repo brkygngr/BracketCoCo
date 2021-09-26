@@ -23,7 +23,7 @@ class FactorialCatalanNumberEquationTest {
   @BeforeEach
   void beforeEach() {
     NumberValidator numberValidator = new PositiveNumberValidator();
-    factorialCatalanNumberEquation = new FactorialCatalanNumberEquation(numberValidator, new RecursiveFactorialEquation(numberValidator));
+    factorialCatalanNumberEquation = new FactorialCatalanNumberEquation(numberValidator, new ParallelFactorialEquation(numberValidator));
   }
 
   @Nested
@@ -32,6 +32,11 @@ class FactorialCatalanNumberEquationTest {
     @CsvSource({"0, 1", "1, 1", "2,2", "3,5", "6, 132", "25, 4861946401452"})
     void positive_numbers(final String givenPairCount, final String givenExpected) {
       assertEquals(new BigInteger(givenExpected), factorialCatalanNumberEquation.catalanNumber(new BigInteger(givenPairCount)));
+    }
+
+    @Test
+    void big_numbers() {
+      factorialCatalanNumberEquation.catalanNumber(new BigInteger("5000"));
     }
   }
 

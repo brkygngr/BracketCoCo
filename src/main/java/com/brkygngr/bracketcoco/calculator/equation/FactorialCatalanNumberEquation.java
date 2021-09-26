@@ -1,6 +1,7 @@
 package com.brkygngr.bracketcoco.calculator.equation;
 
 import com.brkygngr.bracketcoco.calculator.CalculatorConstants;
+import com.brkygngr.bracketcoco.calculator.equation.qualifier.ParallelFactorial;
 import com.brkygngr.bracketcoco.validator.NumberValidator;
 
 import javax.ejb.Stateless;
@@ -10,6 +11,7 @@ import javax.validation.constraints.PositiveOrZero;
 import java.math.BigInteger;
 
 @Stateless
+
 public class FactorialCatalanNumberEquation implements CatalanNumberEquation {
 
   private final NumberValidator numberValidator;
@@ -17,7 +19,7 @@ public class FactorialCatalanNumberEquation implements CatalanNumberEquation {
   private final FactorialEquation factorialEquation;
 
   @Inject
-  public FactorialCatalanNumberEquation(final NumberValidator numberValidator, final FactorialEquation factorialEquation) {
+  public FactorialCatalanNumberEquation(final NumberValidator numberValidator, @ParallelFactorial final FactorialEquation factorialEquation) {
     this.numberValidator = numberValidator;
     this.factorialEquation = factorialEquation;
   }
