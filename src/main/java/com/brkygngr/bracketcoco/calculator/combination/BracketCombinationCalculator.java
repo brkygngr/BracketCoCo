@@ -1,10 +1,12 @@
 package com.brkygngr.bracketcoco.calculator.combination;
 
 import javax.ejb.Local;
-import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
+import java.math.BigInteger;
 
 @Local
 public interface BracketCombinationCalculator {
-  long totalCombinations(@Valid @PositiveOrZero int pairCount);
+
+  BigInteger totalCombinations(@NotNull @PositiveOrZero BigInteger pairCount);
 }

@@ -1,11 +1,13 @@
 package com.brkygngr.bracketcoco.calculator.equation;
 
+import com.brkygngr.bracketcoco.calculator.CalculatorConstants;
 import com.brkygngr.bracketcoco.validator.NumberValidator;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
+import java.math.BigInteger;
 
 @Stateless
 public class FactorialCatalanNumberEquation implements CatalanNumberEquation {
@@ -21,14 +23,14 @@ public class FactorialCatalanNumberEquation implements CatalanNumberEquation {
   }
 
   @Override
-  public long catalanNumber(@Valid @PositiveOrZero final int pairCount) {
+  public BigInteger catalanNumber(@NotNull @PositiveOrZero final BigInteger pairCount) {
     if (numberValidator.invalid(pairCount)) {
       numberValidator.throwError();
     }
 
-    long numerator = factorialEquation.factorial(2 * pairCount);
-    long denominator = factorialEquation.factorial(pairCount + 1) * factorialEquation.factorial(pairCount);
+    BigInteger numerator = factorialEquation.factorial(pairCount.multiply(CalculatorConstants.BIG_INTEGER_TWO));
+    BigInteger denominator = factorialEquation.factorial(pairCount.add(BigInteger.ONE)).multiply(factorialEquation.factorial(pairCount));
 
-    return numerator / denominator;
+    return numerator.divide(denominator);
   }
 }

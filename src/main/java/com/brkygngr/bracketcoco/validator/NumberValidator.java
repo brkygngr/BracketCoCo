@@ -1,10 +1,11 @@
 package com.brkygngr.bracketcoco.validator;
 
 import javax.ejb.Local;
+import java.math.BigInteger;
 
 @Local
 public interface NumberValidator {
-  boolean valid(int number);
-  boolean invalid(int number);
+  boolean valid(BigInteger number);
+  boolean invalid(BigInteger number);
   void throwError();
 }

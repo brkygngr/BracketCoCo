@@ -5,8 +5,10 @@ import com.brkygngr.bracketcoco.validator.NumberValidator;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
+import java.math.BigInteger;
+import java.util.Objects;
 
 @Stateless
 public class CatalanBracketCombinationCalculator implements BracketCombinationCalculator {
@@ -22,13 +24,13 @@ public class CatalanBracketCombinationCalculator implements BracketCombinationCa
   }
 
   @Override
-  public long totalCombinations(@Valid @PositiveOrZero final int pairCount) {
+  public BigInteger totalCombinations(@NotNull @PositiveOrZero final BigInteger pairCount) {
     if (numberValidator.invalid(pairCount)) {
       numberValidator.throwError();
     }
 
-    if (pairCount == 0) {
-      return 0;
+    if (Objects.equals(pairCount, BigInteger.ZERO)) {
+      return BigInteger.ZERO;
     }
 
     return catalanNumberEquation.catalanNumber(pairCount);
