@@ -70,7 +70,7 @@ https://docs.github.com/en/repositories/creating-and-managing-repositories/cloni
        step.
 3. After opening the project source code folder you can run the following command ```mvn clean install tomee:run```.
 4. Please wait until you see something similar to the following text "Deployment of web application archive ... has
-   finished in ... ms" on the "Run" tab.
+   finished in ... ms" on the PowerShell logs.
 5. Open up your web browser.
 6. Traverse to http://localhost:8080/bracketcoco
 7. You can now start using the application.
