@@ -1,6 +1,5 @@
 package com.brkygngr.bracketcoco.validator;
 
-import com.brkygngr.bracketcoco.calculator.CalculatorConstants;
 import com.brkygngr.bracketcoco.calculator.CalculatorUtilities;
 
 import javax.ejb.Stateless;

@@ -1,5 +1,6 @@
 package com.brkygngr.bracketcoco.controller;
 
+import com.brkygngr.bracketcoco.calculator.CalculatorConstants;
 import com.brkygngr.bracketcoco.calculator.combination.BracketCombinationCalculator;
 import com.brkygngr.bracketcoco.dto.BracketCombinationResponseDto;
 
@@ -29,7 +30,7 @@ public class CombinationCalculatorResource {
   @GET
   @Path("bracket")
   @Produces(MediaType.APPLICATION_JSON)
-  public BracketCombinationResponseDto bracketCombinations(@Valid @PositiveOrZero @Max(Integer.MAX_VALUE) @QueryParam("pairCount") final int pairCount) {
+  public BracketCombinationResponseDto bracketCombinations(@Valid @PositiveOrZero @Max(CalculatorConstants.ACCEPTED_MAX_PAIR_COUNT) @QueryParam("pairCount") final int pairCount) {
     return new BracketCombinationResponseDto(bracketCombinationCalculator.totalCombinations(BigInteger.valueOf(pairCount)));
   }
 }
