@@ -10,6 +10,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 @Path("combinations")
 @Stateless
@@ -24,9 +25,9 @@ public class CombinationCalculatorResource {
 
   @GET
   @Path("bracket")
-  @Consumes("application/json")
-  @Produces("application/json")
-  public int bracketCombinations(final int i) {
-    return bracketCombinationCalculator.totalCombinations(i);
+  @Consumes(MediaType.APPLICATION_JSON)
+  @Produces(MediaType.APPLICATION_JSON)
+  public int bracketCombinations(@Valid BracketCombinationRequestDto bracketCombinationRequestDto) {
+    return bracketCombinationCalculator.totalCombinations(bracketCombinationRequestDto.getValue());
   }
 }
