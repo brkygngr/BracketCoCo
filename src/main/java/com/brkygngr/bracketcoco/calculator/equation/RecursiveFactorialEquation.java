@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 import java.math.BigInteger;
 
+@Deprecated
 @Stateless
 public class RecursiveFactorialEquation implements FactorialEquation {
 
