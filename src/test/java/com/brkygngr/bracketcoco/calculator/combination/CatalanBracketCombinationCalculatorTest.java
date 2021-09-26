@@ -34,8 +34,8 @@ class CatalanBracketCombinationCalculatorTest {
   }
 
   @ParameterizedTest
-  @CsvSource({"1, 1", "2, 2", "3, 5", "4, 14", "5, 42"})
-  void totalCombinations_canCalculateForValidPairCounts(final int pairCount, final int expected) {
+  @CsvSource({"1, 1", "2, 2", "3, 5", "4, 14", "5, 42", "25, 4861946401452"})
+  void totalCombinations_canCalculateForValidPairCounts(final int pairCount, final long expected) {
     BDDMockito.given(numberValidator.invalid(pairCount)).willReturn(false);
     BDDMockito.given(catalanNumberEquation.catalanNumber(pairCount)).willReturn(expected);
     assertEquals(expected, catalanBracketCombinationCalculator.totalCombinations(pairCount));

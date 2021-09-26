@@ -22,7 +22,7 @@ public class CatalanBracketCombinationCalculator implements BracketCombinationCa
   }
 
   @Override
-  public int totalCombinations(@Valid @PositiveOrZero final int pairCount) {
+  public long totalCombinations(@Valid @PositiveOrZero final int pairCount) {
     if (numberValidator.invalid(pairCount)) {
       numberValidator.throwError();
     }

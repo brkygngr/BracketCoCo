@@ -1,8 +1,10 @@
 package com.brkygngr.bracketcoco.calculator.combination;
 
 import javax.ejb.Local;
+import javax.validation.Valid;
+import javax.validation.constraints.PositiveOrZero;
 
 @Local
 public interface BracketCombinationCalculator {
-  int totalCombinations(int pairCount);
+  long totalCombinations(@Valid @PositiveOrZero int pairCount);
 }

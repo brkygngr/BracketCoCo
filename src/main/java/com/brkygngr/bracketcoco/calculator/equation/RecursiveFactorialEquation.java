@@ -1,7 +1,6 @@
 package com.brkygngr.bracketcoco.calculator.equation;
 
 import com.brkygngr.bracketcoco.validator.NumberValidator;
-import com.brkygngr.bracketcoco.validator.PositiveNumberValidator;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -19,7 +18,7 @@ public class RecursiveFactorialEquation implements FactorialEquation {
   }
 
   @Override
-  public int factorial(@Valid @PositiveOrZero int number) {
+  public long factorial(@Valid @PositiveOrZero int number) {
     if (numberValidator.invalid(number)) {
       numberValidator.throwError();
     }

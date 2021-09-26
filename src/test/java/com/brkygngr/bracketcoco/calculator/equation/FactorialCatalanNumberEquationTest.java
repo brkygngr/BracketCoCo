@@ -27,7 +27,7 @@ class FactorialCatalanNumberEquationTest {
   @Nested
   class ValidNumbers {
     @ParameterizedTest
-    @CsvSource({"0, 1", "1, 1", "2,2", "3,5", "6, 132"})
+    @CsvSource({"0, 1", "1, 1", "2,2", "3,5", "6, 132", "25, 4861946401452"})
     void canCalculate(final int number, final int expected) {
       assertEquals(factorialCatalanNumberEquation.catalanNumber(number), expected);
     }

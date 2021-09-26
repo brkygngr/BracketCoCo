@@ -21,14 +21,13 @@ public class FactorialCatalanNumberEquation implements CatalanNumberEquation {
   }
 
   @Override
-  public int catalanNumber(@Valid @PositiveOrZero final int pairCount) {
+  public long catalanNumber(@Valid @PositiveOrZero final int pairCount) {
     if (numberValidator.invalid(pairCount)) {
       numberValidator.throwError();
     }
 
-
-    int numerator = factorialEquation.factorial(2 * pairCount);
-    int denominator = factorialEquation.factorial(pairCount + 1) * factorialEquation.factorial(pairCount);
+    long numerator = factorialEquation.factorial(2 * pairCount);
+    long denominator = factorialEquation.factorial(pairCount + 1) * factorialEquation.factorial(pairCount);
 
     return numerator / denominator;
   }
