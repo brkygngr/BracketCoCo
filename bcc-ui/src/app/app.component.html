@@ -1,19 +1,22 @@
-<div class="app-form-container">
-  <div class="app-form-element">
-    <label>
-      Type a number between [0, 4000]
-      <input type="number" min="0" [(ngModel)]="pairCount" (keyup)="onNumberInputKeyUp()" />
-    </label>
-
-    <button (click)="onCountClick()">Count</button>
-  </div>
-
-  <div class="app-form-element">
-    <div class="app-result-wrapper">
-      Result: {{ result }}
-    </div>  
-    <div class="app-error-wrapper">
-      {{ error }}
+<div class="app-page-container">
+  <div class="app-form-container">
+    <div class="app-form-element">
+      <label>
+        Type a number equal to or bigger than 0
+        <input type="number" min="0" [(ngModel)]="pairCount" (keyup)="onNumberInputKeyUp()" />
+      </label>
+  
+      <button (click)="onCountClick()">Count</button>
+    </div>
+  
+    <div class="app-form-element">
+      <div class="app-result-wrapper">
+        Result: {{ result }}
+      </div>  
+      <div class="app-error-wrapper">
+        {{ error }}
+      </div>
     </div>
   </div>
+  
 </div>
