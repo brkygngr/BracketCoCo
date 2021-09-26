@@ -1,4 +1,4 @@
-package com.brkygngr.bracketcoco.controller.provider;
+package com.brkygngr.bracketcoco.provider;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
@@ -15,7 +15,6 @@ public class ConstraintViolationExceptionMapper
 
   @Override
   public Response toResponse(ConstraintViolationException exception) {
-
     List<String> errors = exception.getConstraintViolations().stream()
             .map(ConstraintViolation::getMessage)
             .collect(Collectors.toList());
