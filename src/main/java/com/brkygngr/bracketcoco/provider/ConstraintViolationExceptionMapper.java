@@ -1,12 +1,13 @@
 package com.brkygngr.bracketcoco.provider;
 
+import com.brkygngr.bracketcoco.dto.BracketCombinationResponseDto;
+
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
-import java.util.List;
 import java.util.stream.Collectors;
 
 @Provider
@@ -15,11 +16,18 @@ public class ConstraintViolationExceptionMapper
 
   @Override
   public Response toResponse(ConstraintViolationException exception) {
-    List<String> errors = exception.getConstraintViolations().stream()
+    String error = exception
+            .getConstraintViolations()
+            .stream()
             .map(ConstraintViolation::getMessage)
-            .collect(Collectors.toList());
+            .collect(Collectors.toList())
+            .toString();
 
-    return Response.status(Response.Status.BAD_REQUEST).entity(errors)
+    BracketCombinationResponseDto bracketCombinationResponseDto = new BracketCombinationResponseDto(error);
+
+    return Response
+            .status(Response.Status.BAD_REQUEST)
+            .entity(bracketCombinationResponseDto)
             .type(MediaType.APPLICATION_JSON).build();
   }
 }
