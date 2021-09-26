@@ -1,0 +1,26 @@
+.app-form-container,
+.app-result-wrapper,
+.app-error-wrapper,
+.app-form-element {
+  padding: 1rem;
+  margin: 1rem;
+}
+
+
+.app-form-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  place-content: center center;
+}
+
+.app-result-wrapper {
+  max-width: 100vw;
+  white-space: normal;
+}
+
+.app-error-wrapper {
+  color: red;
+  border-top: black 1px solid;
+}

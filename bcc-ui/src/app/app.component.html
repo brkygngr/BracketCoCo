@@ -1,18 +1,19 @@
-<div>
-  <label>
-    Please type a number
-    <input type="number" min="0" [(ngModel)]="pairCount" />
-  </label>
+<div class="app-form-container">
+  <div class="app-form-element">
+    <label>
+      Please type a number bigger or equal to 0
+      <input type="number" min="0" [(ngModel)]="pairCount" (keyup)="onNumberInputKeyUp()" />
+    </label>
 
-  <button (click)="onCountClick()">Count</button>
-</div>
+    <button (click)="onCountClick()">Count</button>
+  </div>
 
-<div>
-  <label>
-    Result
-    {{ result }}
-  </label>
-</div>
-<div style="color: red;">
-  {{ error }}
+  <div class="app-form-element">
+    <div class="app-result-wrapper">
+      Result: {{ result }}
+    </div>  
+    <div class="app-error-wrapper">
+      {{ error }}
+    </div>
+  </div>
 </div>
