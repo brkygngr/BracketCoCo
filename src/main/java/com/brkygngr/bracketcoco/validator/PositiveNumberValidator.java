@@ -8,7 +8,7 @@ import java.math.BigInteger;
 @Stateless
 public class PositiveNumberValidator implements NumberValidator {
 
-  public final String NEGATIVE_NUMBER = "Given number must be positive.";
+  private static final String NEGATIVE_NUMBER = "Given number must be positive.";
 
   @Override
   public boolean valid(BigInteger number) {
