@@ -1,7 +1,6 @@
 package com.brkygngr.bracketcoco.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
+import javax.json.bind.annotation.JsonbProperty;
 import javax.validation.Valid;
 import javax.validation.constraints.PositiveOrZero;
 import java.math.BigInteger;
@@ -10,7 +9,7 @@ import java.math.BigInteger;
 public class BracketCombinationResponseDto {
 
   @PositiveOrZero
-  @JsonProperty("tc")
+  @JsonbProperty("tc")
   private final BigInteger totalCombinations;
 
   public BracketCombinationResponseDto(final BigInteger totalCombinations) {
